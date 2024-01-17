@@ -41,6 +41,7 @@ threatintel_url = "https://www.circl.lu/doc/misp/feed-osint/"
 home_dir = "/home/lani/feed/"
 
 # Enable debug, printing info to the screen
+#debug = False
 debug = True
 
 ############

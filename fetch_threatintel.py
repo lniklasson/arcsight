@@ -124,7 +124,8 @@ def delete_jsons(directory):
     #dir = ""
     #path = os.path.join(location, dir)
     shutil.rmtree(directory)
-    print("Directory " + directory + " is deleted.")
+    if debug:
+        print("Directory " + directory + " is deleted.")
     return
 
 ############

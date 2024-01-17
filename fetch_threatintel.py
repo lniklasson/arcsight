@@ -10,18 +10,34 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
+# Example output when debug is enabled
 '''
-URL of the threatintel web-page which provides link to
-all json. It would have been tiring to
-download each json manually.
-We first crawl the webpage to extract
-all the links and then download jsons.
+Debug mode enabled, only one file will be downloaded.
+
+Directory '/home/lani/feed/2024-01-17T153812' created
+Downloading file:0b988513-9535-42f0-9ebc-5d6aec2e1c79.json
+0b988513-9535-42f0-9ebc-5d6aec2e1c79.json downloaded!
+
+All json downloaded!
+
+File /home/lani/feed/2024-01-17T153812.tar.gz created!
+Directory /home/lani/feed/2024-01-17T153812 is deleted.
+
+1. Move the tar file over to the airgap'ed environment
+2. Install httpd, enable and start httpd
+3. Make sure firewall is blocking port 80, this only need to be reachable via localhost
+4. Create the folder /var/www/html/feed
+5. Untar the file into this directory
+6. Install ArcSight Threat Acceleration Connector
+7. Enter http://localhost as Threat Intel URL
+8. Start the Connector and in ESM configure the Connecotr with a user as "Model import user"
+9. Start the import on the Connector (under Send Command/Model Import Connector/Start Import)
 '''
 
 # specify the URL of the threatintel here
 threatintel_url = "https://www.circl.lu/doc/misp/feed-osint/"
 
-# define the direcroty where you want to use as home
+# define the directory where you want to use as home
 home_dir = "/home/lani/feed/"
 
 # Enable debug, printing info to the screen
